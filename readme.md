@@ -1,3 +1,5 @@
+# RBDB
+
 Použité technologie:
 -Node.js (v18+)
 -Express pro tvorbu REST API
@@ -13,4 +15,3 @@ node src/db.js
 
 Simulace zápasu:
 node src/script.js
-

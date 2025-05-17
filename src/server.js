@@ -42,7 +42,7 @@ app.put('/team/:id', async(req,res) => {
 })
 
 app.delete('/team/:id', async(req, res) => {
-    const result = await client.query(`DELETE FROM team WHERE id = $1 RETURNING *`,
+    await client.query(`DELETE FROM team WHERE id = $1 RETURNING *`,
         [req.params.id]
     )
     res.status(204).send()
@@ -80,7 +80,7 @@ app.put('/match/:id', async(req, res) => {
 })
 
 app.delete('/match/:id', async(req, res) => {
-    const result = await client.query(`DELETE FROM match WHERE id = $1 RETURNING *`, 
+    await client.query(`DELETE FROM match WHERE id = $1 RETURNING *`, 
         [req.params.id]
     );
   res.status(204).send();
@@ -120,7 +120,7 @@ app.put('/event/:id', async (req, res) => {
 });
 
 app.delete('/event/:id', async (req, res) => {
-  const result = await client.query(`DELETE FROM event WHERE id = $1 RETURNING *`, 
+  await client.query(`DELETE FROM event WHERE id = $1 RETURNING *`, 
     [req.params.id]
 );
   res.status(204).send();
